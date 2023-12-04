@@ -1,3 +1,5 @@
+
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
@@ -220,12 +222,12 @@ class _ProximasCarreras extends StatelessWidget {
 }
 
 final List<String> imgList = [
-  'https://images.unsplash.com/photo-1520342868574-5fa3804e551c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6ff92caffcdd63681a35134a6770ed3b&auto=format&fit=crop&w=1951&q=80',
-  'https://images.unsplash.com/photo-1522205408450-add114ad53fe?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=368f45b0888aeb0b7b08e3a1084d3ede&auto=format&fit=crop&w=1950&q=80',
-  'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=94a1e718d89ca60a6337a6008341ca50&auto=format&fit=crop&w=1950&q=80',
-  'https://images.unsplash.com/photo-1523205771623-e0faa4d2813d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=89719a0d55dd05e2deae4120227e6efc&auto=format&fit=crop&w=1953&q=80',
-  'https://images.unsplash.com/photo-1508704019882-f9cf40e475b4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8c6e5e3aba713b17aa1fe71ab4f0ae5b&auto=format&fit=crop&w=1352&q=80',
-  'https://images.unsplash.com/photo-1519985176271-adb1088fa94c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a0c8d632e977f94e5d312d9893258f59&auto=format&fit=crop&w=1355&q=80'
+  'https://estaticos-cdn.prensaiberica.es/clip/a99a48a0-786d-44b3-89da-e7f28304f4e5_alta-libre-aspect-ratio_default_0.jpg',
+  'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/2007_Race_of_Champions.jpg/220px-2007_Race_of_Champions.jpg',
+  'https://img.remediosdigitales.com/6ee279/portimao-motogp-2020/840_560.jpg',
+  'https://www.diariomotor.com/competicion/imagenes/2018/01/Race_of_Champions_8_18_2_18.jpg',
+  'https://carloscastella.files.wordpress.com/2010/06/04-bristol5.gif',
+
 ];
 
 class CampeonatosRecientes extends StatelessWidget {
@@ -254,6 +256,7 @@ class CampeonatosRecientes extends StatelessWidget {
               aspectRatio: 3.0,
               enlargeCenterPage: false,
               viewportFraction: 1,
+                
             ),
             itemCount: (imgList.length / 3).round(),
             itemBuilder: (context, index, realIdx) {
@@ -263,33 +266,50 @@ class CampeonatosRecientes extends StatelessWidget {
               return Row(
                 children: [first, second, third].map((idx) {
                   return Expanded(
-                    flex: 1,
-                    child: Container(
-                      margin: const EdgeInsets.symmetric(horizontal: 10),
-                      child:
-                            Card(
-                              margin: const EdgeInsets.symmetric(horizontal: 10),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  Image.network(imgList[idx], fit: BoxFit.cover),
-                                  ListTile(
-                                    title: Text('Campeonato ${idx+1}', style: const TextStyle(fontWeight: FontWeight.bold),),
-                                    subtitle: const Text(
-                                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin',
-                                      maxLines: 2, // Establece el número máximo de líneas que deseas mostrar
-                                      overflow: TextOverflow.ellipsis, // Opcional: agrega puntos suspensivos al final si el texto está truncado
-
-                                    ),
-                                  ),
-                                ]
+                    flex: 2,
+                    child: 
+                      Card(
+                        margin: const EdgeInsets.symmetric(horizontal: 10),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [ 
+                            AspectRatio(
+                              aspectRatio: 16/9,
+                              child: Image.network(imgList[idx], fit: BoxFit.cover)),
+                            ListTile(
+                              title: Text('Campeonato ${idx+1}', style: const TextStyle(fontWeight: FontWeight.bold),),
+                              subtitle: const Text(
+                                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin',
+                                maxLines: 2, // Establece el número máximo de líneas que deseas mostrar
+                                overflow: TextOverflow.ellipsis, // Opcional: agrega puntos suspensivos al final si el texto está truncado
                               ),
                             ),
-                    ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: ElevatedButton(
+                                    onPressed: null, 
+                                    style: ButtonStyle(
+                                      backgroundColor: MaterialStateProperty.all<Color>(theme.colorScheme.primary), // Cambia el color aquí
+                                    ),
+                                    child: 
+                                      Text('Ver Informacion', style: TextStyle(color: theme.colorScheme.onPrimary),),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            
+                          ]
+                        ),
+                      ),
                   );
                 }).toList(),
+                
               );
             },
+            
           )
         ],
       ),
@@ -311,3 +331,4 @@ class _CampeonatoCard extends StatelessWidget {
   }
 
 }
+
