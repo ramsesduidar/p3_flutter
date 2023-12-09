@@ -19,7 +19,7 @@ class MisCampeonatos extends StatelessWidget {
           Padding(
             padding: EdgeInsets.all(20.0),
             child: Text(
-              'Bienvenido, Juan',
+              'Campeonatos de Juan',
               style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
             ),
           ),
@@ -94,6 +94,7 @@ class TarjetaConBotones extends StatelessWidget {
               aspectRatio: 16 / 9,
               child: Image.asset(
                 'imagenes/Campeonato1.jpg',
+                fit: BoxFit.cover,
               ),
             ),
             ListTile(

@@ -12,7 +12,7 @@ class CampeonatosPiloto extends StatelessWidget {
           Padding(
             padding: EdgeInsets.all(20.0),
             child: Text(
-              'Bienvenido, Juan',
+              'Buscar Campeonatos',
               style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
             ),
           ),
@@ -87,6 +87,7 @@ class TarjetaConBotones extends StatelessWidget {
               aspectRatio: 16 / 9,
               child: Image.asset(
                 'imagenes/Campeonato1.jpg',
+                fit: BoxFit.cover,
               ),
             ),
             ListTile(
@@ -104,7 +105,7 @@ class TarjetaConBotones extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.all(8.0),
                   child: ElevatedButton(
                     onPressed: () {
                       _mostrarEnDesarrollo(context);
@@ -122,7 +123,7 @@ class TarjetaConBotones extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.all(8.0),
                   child: ElevatedButton(
                     onPressed: () {
                       _mostrarEnDesarrollo(context);
