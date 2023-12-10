@@ -1,6 +1,9 @@
 # p3_flutter
 
 A new Flutter project.
+Realizado por: 
+  - Duidar Moreno, Ramsés
+  - Montalban Jimenez, Jose María
 
 ## Getting Started
 
